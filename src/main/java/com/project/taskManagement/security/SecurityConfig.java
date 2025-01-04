@@ -1,4 +1,4 @@
-package com.project.taskManagment.security;
+package com.project.taskManagement.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

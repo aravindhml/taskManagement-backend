@@ -2,23 +2,42 @@ package com.project.taskManagement.model;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "\"user\"")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String username;
-    private String email;
-    private String password;
-    private String role;
-    
-    public Long getId() {
+	@Column(name = "\"id\"")
+	private Long id;
+	
+	@Column(name = "\"username\"")
+	private String username;
+	
+	@Column(name = "\"email\"")
+	private String email;
+	
+	@Column(name = "\"password\"")
+	private String password;
+	
+	@Column(name = "\"role\"")
+	private String role;
+
+	@OneToMany(mappedBy = "assignee")
+	@JsonManagedReference
+	private Set<Task> tasks;
+
+	public Long getId() {
 		return id;
 	}
 
@@ -66,7 +85,4 @@ public class User {
 		this.tasks = tasks;
 	}
 
-	private Set<Task> tasks;
-    
-    
 }

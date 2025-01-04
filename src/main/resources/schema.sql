@@ -14,7 +14,7 @@ CREATE TABLE "task" (
     "description" TEXT,
     "priority" VARCHAR(50),
     "status" VARCHAR(50),
-    "duedate" DATE,
+    "duedate" TIMESTAMP,  -- Changed from DATE to TIMESTAMP if you need date & time
     "assignee_id" BIGINT,
     FOREIGN KEY ("assignee_id") REFERENCES "user"("id")
 );

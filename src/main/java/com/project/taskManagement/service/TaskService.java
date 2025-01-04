@@ -1,4 +1,4 @@
-package com.project.taskMangement.service;
+package com.project.taskManagement.service;
 
 import java.util.List;
 

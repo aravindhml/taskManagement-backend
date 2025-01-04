@@ -1,4 +1,4 @@
-package com.project.taskMangement.service;
+package com.project.taskManagement.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

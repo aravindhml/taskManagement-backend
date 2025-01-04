@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.taskManagement.model.Task;
-import com.project.taskMangement.service.TaskService;
+import com.project.taskManagement.service.TaskService;
 
 @RestController
 @RequestMapping("/tasks")
@@ -27,6 +27,10 @@ public class TaskController {
 		return taskService.createTask(task);
 	}
 
+	@GetMapping("/check")
+	public String  healthCheck() {
+		return "application is running";
+	}
 //	    @GetMapping("/{id}")
 //	    public Task getTaskById(@PathVariable Long id) {
 //	        return taskService.getTaskById(id);
