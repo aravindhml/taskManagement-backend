@@ -19,33 +19,33 @@ import com.project.taskMangement.service.TaskService;
 @RequestMapping("/tasks")
 public class TaskController {
 
-	 @Autowired
-	    private TaskService taskService;
+	@Autowired
+	private TaskService taskService;
 
-	    @PostMapping
-	    public Task createTask(@RequestBody Task task) {
-	        return taskService.createTask(task);
-	    }
+	@PostMapping
+	public Task createTask(@RequestBody Task task) {
+		return taskService.createTask(task);
+	}
 
 //	    @GetMapping("/{id}")
 //	    public Task getTaskById(@PathVariable Long id) {
 //	        return taskService.getTaskById(id);
 //	    }
 
-	    @GetMapping("/user/{assigneeId}")
-	    public List<Task> getTasksByUser(@PathVariable Long assigneeId) {
-	        return taskService.getTasksByAssignee(assigneeId);
-	    }
+	@GetMapping("/user/{assigneeId}")
+	public List<Task> getTasksByUser(@PathVariable Long assigneeId) {
+		return taskService.getTasksByAssignee(assigneeId);
+	}
 
-	    @PutMapping("/{id}")
-	    public Task updateTask(@PathVariable Long id, @RequestBody Task task) {
-	        task.setId(id);
-	        return taskService.updateTask(task);
-	    }
+	@PutMapping("/{id}")
+	public Task updateTask(@PathVariable Long id, @RequestBody Task task) {
+		task.setId(id);
+		return taskService.updateTask(task);
+	}
 
-	    @DeleteMapping("/{id}")
-	    public void deleteTask(@PathVariable Long id) {
-	        taskService.deleteTask(id);
-	    }
-	
+	@DeleteMapping("/{id}")
+	public void deleteTask(@PathVariable Long id) {
+		taskService.deleteTask(id);
+	}
+
 }
